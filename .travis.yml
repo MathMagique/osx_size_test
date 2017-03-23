@@ -1,0 +1,16 @@
+sudo: required
+language: generic
+
+
+matrix:
+  include:
+  - os: osx
+    osx_image: xcode6.4
+  - os: osx
+    osx_image: xcode7.3
+  - os: osx
+    osx_image: xcode8.2
+
+script:
+  - clang++ -std=c++11 -o test --stdlib=libc++ test.cpp
+  - ./test 
